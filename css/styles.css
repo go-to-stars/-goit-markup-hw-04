@@ -1,11 +1,5 @@
 :root {
-  --primary-brand-color: #4d5ae5; /* IRIS */
-  --pressed-state-color: #404bbf; /* OCEAN */
-  --dark-color: #2e2f42; /* NAVYBLUE */
-  --text-color: #434455; /* SLATE */
-  --accent-color: #e7e9fc; /* CORNFLOWER */
-  --light-color: #f4f4fd; /* CLOUD */
-  --light-background-color: #ffffff;
+  /* =================== size const =================== */
   --width-container: 1158px;
   --page-padding: 15px;
   --gap-between: 40px;
@@ -21,16 +15,37 @@
   --works-row-gap: 48px;
   --team-column-cards: 4;
   --team-column-gap: 24px;
-  --team-row-gap: 48px;
+  --team-row-gap: 48px;  
+  --customers-column-cards: 6;
+  --customers-column-gap: 24px;
+  --customers-row-gap: 48px;
   --portfolio-column-cards: 3;
   --portfolio-column-gap: 24px;
   --portfolio-row-gap: 48px;
+  /* =================== /size const =================== */
+  
+  /* =================== color const =================== */
+  --primary-brand-color: #4d5ae5; /* IRIS */
+  --pressed-state-color: #404bbf; /* OCEAN */
+  --dark-color: #2e2f42; /* NAVYBLUE */
+  --text-color: #434455; /* SLATE */
+  --subtle-text-colour: #8E8F99; /* LIGHT SLATE */
+  --accent-color: #e7e9fc; /* CORNFLOWER */
+  --light-color: #f4f4fd; /* CLOUD */
+  --light-background-color: #ffffff;
+  --hero-image-background-color: rgba(46, 47, 66, 0.7);
+  --success-valid-green-colour-100: rgba(49, 208, 170, 1.0);
+  --success-valid-green-colour-75: rgba(49, 208, 170, 0.75);
+  --success-valid-green-colour-50: rgba(49, 208, 170, 0.50);
+  --success-valid-green-colour-10: rgba(49, 208, 170, 0.1);
+  /* =================== /color const =================== */  
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   line-height: calc(24 / 16);
   letter-spacing: 0.02em;
+
   color: var(--dark-color);
 }
 
@@ -40,6 +55,7 @@ body {
 
 .link {
   text-decoration: none;
+
   color: currentColor;
 }
 
@@ -102,6 +118,7 @@ img {
   line-height: calc(24 / 18);
   letter-spacing: 0.03em;
   text-transform: uppercase;
+
   color: var(--primary-brand-color);
 }
 
@@ -115,6 +132,7 @@ img {
   font-size: inherit;
   line-height: inherit;
   letter-spacing: 0.04em;
+
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -125,8 +143,7 @@ img {
   padding-left: var(--page-padding);
   padding-right: var(--page-padding);
   margin-left: auto;
-  margin-right: auto;
-  /* outline: 2px solid tomato; */
+  margin-right: auto;  
 }
 
 .visually-hidden {
@@ -149,8 +166,7 @@ img {
 
 .section {
   padding-top: var(--indent-up-down-section);
-  padding-bottom: var(--indent-up-down-section);
-  /* outline: 2px solid teal; */
+  padding-bottom: var(--indent-up-down-section);  
 }
 /* =================== /components =================== */
 
@@ -185,6 +201,7 @@ img {
   padding-bottom: var(--heder-padding);
 
   font-weight: 500;
+
   color: var(--dark-color);
 }
 
@@ -227,10 +244,23 @@ img {
 .hero {
   padding-top: 188px;
   padding-bottom: 188px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+  height: 600px;
 
   text-align: center;
-  background-color: var(--dark-color);
+
+  background-color: var(--hero-image-background-color);
+  background-image: linear-gradient(to right, var(--hero-image-background-color), var(--hero-image-background-color)), url(../images/hero/hero-img1-group-people-working-website-template.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;  
 }
+
+/* .hero-container {
+
+} */
 
 .hero-title {
   margin-bottom: 48px;
@@ -240,6 +270,7 @@ img {
 
   font-size: 56px;
   line-height: calc(60 / 56);
+
   color: var(--light-background-color);
 }
 
@@ -248,7 +279,6 @@ img {
 
   color: var(--light-background-color);
   background-color: var(--primary-brand-color);
-
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -271,6 +301,17 @@ img {
     (100% - (var(--benefits-column-gap) * (var(--benefits-column-cards) - 1))) /
       var(--benefits-column-cards)
   );
+}
+
+.benefits-list-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  height: 112px;
+  margin-bottom: 8px;
+
+  background-color: var(--light-color);
+  border-radius: 4px;
 }
 /* =================== /section benefits =================== */
 
@@ -303,11 +344,6 @@ img {
   background-color: var(--light-color);
 }
 
-/* .team-container {
-  padding-top: var(--indent-up-down-section);
-  padding-bottom: var(--indent-up-down-section);
-} */
-
 .team-list {
   display: flex;
   flex-wrap: wrap;  
@@ -322,8 +358,7 @@ img {
       var(--team-column-cards)
   );
   
-  background-color: var(--light-background-color);
-  
+  background-color: var(--light-background-color);  
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;  
@@ -338,32 +373,156 @@ img {
 .team-text {
   text-align: center;
 }
+
+.team-text {
+  margin-bottom: 8px;
+}
+
+.team-list-social {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.team-list-social-item {
+  width: 40px;
+  height: 40px;
+}
+
+.team-list-social-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  background-color: var(--primary-brand-color);
+}
+.team-list-social-icon {
+  fill: var(--light-color);
+}
+
+.team-list-social-item-link:hover,
+.team-list-social-item-link:focus {
+  background-color: var(--pressed-state-color);
+}
 /* =================== /section team =================== */
+
+/* =================== section customers =================== */
+.customers {
+  padding-top: 130px;
+}
+
+.customers-list {
+  display: flex;
+  flex-wrap: wrap;  
+  row-gap: var(--customers-row-gap);
+  column-gap: var(--customers-column-gap);  
+}
+
+.customers-list-item {
+  flex-basis: calc(
+    (100% - (var(--customers-column-gap) * (var(--customers-column-cards) - 1))) /
+      var(--customers-column-cards)
+  );
+  height: 88px;
+}
+
+.customers-list-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  height: 100%; 
+  column-gap: var(--customers-column-gap);
+  
+  border: 1px solid var(--subtle-text-colour);
+  border-radius: 4px;
+}
+
+.customers-list-item-icon {  
+  fill: var(--subtle-text-colour);
+}
+
+.customers-list-item-link:hover .customers-list-item-icon,
+.customers-list-item-link:focus .customers-list-item-icon {  
+  fill: var(--pressed-state-color);
+}
+
+.customers-list-item-link:hover,
+.customers-list-item-link:focus {  
+  border-color: var(--pressed-state-color);
+}
+/* =================== /section customers =================== */
 /* =================== /site main section =================== */
 
 /* =================== site footer section =================== */
 .footer {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 100px;  
 
   background-color: var(--dark-color);
 }
 
-.footer-logotype {
+.footer-container {
+  display: flex;
+  column-gap: var(--indent-up-down-section);
+}
+
+.footer-logotype-link {
   display: block;
   margin-bottom: 16px;
 
   line-height: calc(21 / 18);  
 }
 
-.footer-logotype-span {
+.footer-logotype-link-span {
   color: var(--light-color);
 }
 
-.footer-text {
+.footer-logotype-text {
   max-width: var(--max-width-img);
 
   color: var(--accent-color);
+}
+
+.footer-social-subtitle {
+  margin-bottom: 16px;
+
+  font-weight: 500;
+  font-size: 16px;
+  
+  color: var(--light-background-color);
+}
+
+.footer-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-social-item {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-social-list-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-social-list-icon {
+  fill: var(--light-color);
+}
+
+.footer-social-list-item-link:hover,
+.footer-social-list-item-link:focus {  
+  background-color: var(--success-valid-green-colour-100);
 }
 /* =================== /site footer section =================== */
 /* =================== /index.html =================== */
@@ -394,7 +553,7 @@ img {
 .portfolio-button:focus {
   color: var(--light-background-color);
   background-color: var(--pressed-state-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-box-list {
@@ -423,10 +582,10 @@ img {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.portfolio-box-item:hover,
-.portfolio-box-item:focus {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+.portfolio-box-link:hover,
+.portfolio-box-link:focus {
+  /* border: 0.5px solid var(--light-color); */
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-box-subtitle {
